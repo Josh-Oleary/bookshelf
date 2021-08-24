@@ -1,0 +1,28 @@
+.search-bar {
+  width: 100%;
+  font-size: 2em;
+  height: 1.5em;
+  border: 0;
+  border-bottom: 1px solid black;
+  margin-top: 1em;
+}
+.search-bar:focus , .search-bar:hover , .search-bar:active{
+  outline: none;
+}
+
+.search-form {
+  width: 80%;
+  margin: auto;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: auto;
+  margin-top: 1em;
+}
+.result-img {
+  flex-basis: 20%;
+}

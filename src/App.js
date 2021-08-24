@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import BookCase from './BookCase'
+import SearchPage from './SearchPage'
 
 function App() {
   return (
-    <BookCase />
+    <div>
+      <BookCase />
+      <SearchPage />
+    </div>
+    
   );
 }
 
