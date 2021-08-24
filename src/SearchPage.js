@@ -9,9 +9,6 @@ class SearchPage extends Component {
     query: '',
   }
   updateQuery = query => {
-    // this.setState(() => ({
-    //   query: query.trim()
-    // }))
     BooksAPI.search(query)
       .then(res => 
         this.setState(curState => ({
@@ -23,6 +20,7 @@ class SearchPage extends Component {
   
   render(){
     const { query, booksOnDisplay } = this.state;
+    const { books, changeShelf} = this.props;
     return(
       <div>
         <form className='search-form'>
@@ -37,9 +35,12 @@ class SearchPage extends Component {
         <div className='search-results'>
           {booksOnDisplay.map(b => {
             return <div className='result-img'>
-                      <Book 
+                      <Book
+                        books={books}
+                        changeShelf={changeShelf}
                         info={b}
                         key={b.id}
+                        shelf={b.shelf || 'none'}
                       />
                     </div>
           })}

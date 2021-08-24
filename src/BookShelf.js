@@ -5,29 +5,12 @@ import * as BooksAPI from './BooksAPI'
 
 
 class BookShelf extends Component {
-  state={
-    books: [],
-  }
-  componentDidMount(){
-    BooksAPI.getAll()
-      .then(books => 
-        this.setState(curState => ({
-          books: curState.books.concat(books)
-        })
-      ))
-  }
-  
-  updateShelf = (book, shelf) => {
 
-  }
 
-  handleChange = () => {
-    this.updateShelf();
-  }
 
   render() {
-    const { title, name } = this.props;
-    const shelfBooks = this.state.books.filter(b => {
+    const { title, name, books, changeShelf } = this.props;
+    const shelfBooks = books.filter(b => {
       return b.shelf === name;
     })
     
@@ -38,7 +21,8 @@ class BookShelf extends Component {
         <div className='book-container'>
           {shelfBooks.map(b => {
             return <Book 
-                    changeShelf={this.handleChange} 
+                    books={books}
+                    changeShelf={changeShelf} 
                     info={b} 
                     key={b.id} 
                     shelf={b.shelf} 
