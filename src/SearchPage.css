@@ -28,7 +28,7 @@
   flex-basis: 20%;
 }
 
-.search-form a {
+.search-form-nav {
   align-self: flex-end;
   margin-left: 1em;
   text-decoration: none;
@@ -36,6 +36,6 @@
   transition: 200ms;
 }
 
-.search-form a:hover {
+.search-form-nav:hover {
   color: black;
 }

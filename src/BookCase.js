@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import BookShelf from './BookShelf'
 import './Bookcase.css'
-import * as BooksAPI from './BooksAPI'
+import { Link } from 'react-router-dom'
 import './Bookcase.css'
 
 class BookCase extends Component {
@@ -10,7 +10,11 @@ class BookCase extends Component {
     const { books, changeShelf } = this.props
     return (
       <div className='Bookcase'>
-        <a className='search-nav-link'href='/search'>Search Books</a>
+        <Link
+          className='search-nav-link'
+          to='/search'>
+            Search Books
+        </Link>
         <h1>My Bookshelf</h1>
         <BookShelf books={books} changeShelf={changeShelf} name={'currentlyReading'} title={'Reading'} />
         <BookShelf books={books} changeShelf={changeShelf} name={'wantToRead'} title={'Next Up'} />

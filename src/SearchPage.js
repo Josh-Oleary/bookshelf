@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as BooksAPI from './BooksAPI'
 import './SearchPage.css'
 import Book from './Book'
+import { Link } from 'react-router-dom'
 
 class SearchPage extends Component {
   state={
@@ -32,7 +33,11 @@ class SearchPage extends Component {
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
-          <a href='/'>To Bookshelf</a>
+          <Link 
+          to='/'
+          className='search-form-nav'
+          >To Bookshelf</Link>
+          
         </form>
         <div className='search-results'>
           {booksOnDisplay.map(b => {
