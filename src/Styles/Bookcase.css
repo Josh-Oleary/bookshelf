@@ -8,11 +8,13 @@
 
 .search-nav-link {
   align-self: flex-end;
+  font-weight: 600;
+  font-size: 45px;
   margin-right: 3em;
-  position: absolute;
+  position: fixed;
   margin-top: 2em;
   text-decoration: none;
-  color: grey;
+  color: rgba(0, 0, 0, 0.541);
   transition: 200ms;
 }
 

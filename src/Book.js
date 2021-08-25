@@ -20,7 +20,7 @@ class Book extends Component {
           <div className='book-cover'>
             <img src={info.imageLinks.smallThumbnail} alt='book'></img>
           </div>
-          <div>
+          <div className='book-details'>
             <p className='title'>{info.title}</p>
             {info.authors.map(a => {
               return <p className='author'>{a}</p>

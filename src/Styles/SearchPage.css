@@ -5,6 +5,7 @@
   border: 0;
   border-bottom: 1px solid black;
   margin-top: 1em;
+  background: transparent;
 }
 .search-bar:focus , .search-bar:hover , .search-bar:active{
   outline: none;
@@ -23,6 +24,10 @@
   width: 90%;
   margin: auto;
   margin-top: 1em;
+}
+.search-page {
+  background-color: rgba(210, 180, 140, 0.575);
+  height: 100vh;
 }
 .result-img {
   flex-basis: 20%;

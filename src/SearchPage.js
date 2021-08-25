@@ -30,7 +30,7 @@ class SearchPage extends Component {
     const { query, booksOnDisplay } = this.state;
     const { books, changeShelf} = this.props;
     return(
-      <div>
+      <div className='search-page'>
         
         <form className='search-form'>
           <input 

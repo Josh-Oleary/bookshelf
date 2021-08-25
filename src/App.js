@@ -32,7 +32,7 @@ class App extends Component {
     const { books } = this.state;
 
     return (
-      <div>
+      <div className='App'>
         <Route 
           exact path='/'
           render={() => (
