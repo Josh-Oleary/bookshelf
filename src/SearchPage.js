@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import * as BooksAPI from './BooksAPI'
-import './SearchPage.css'
+import './Styles/SearchPage.css'
 import Book from './Book'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class SearchPage extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    changeShelf: PropTypes.func.isRequired
+  }
+
   state={
     booksOnDisplay: [],
     query: '',
   }
-  updateQuery = query => {
+  //function for updating query as user types, may add debounce for better ux
+  updateQuery = query => {  
     BooksAPI.search(query)
       .then(res => 
         this.setState(curState => ({
@@ -40,17 +47,22 @@ class SearchPage extends Component {
           
         </form>
         <div className='search-results'>
-          {booksOnDisplay.map(b => {
-            return <div className='result-img'>
-                      <Book
-                        books={books}
-                        changeShelf={changeShelf}
-                        info={b}
-                        key={b.id}
-                        shelf={b.shelf || 'none'}
-                      />
-                    </div>
-          })}
+          {/* displaying books that match the current query, which is held in the state */}
+          {booksOnDisplay.length > 0 && (
+            booksOnDisplay.map(b => {
+              return <div className='result-img'>
+                        <Book
+                          books={books}
+                          changeShelf={changeShelf}
+                          info={b}
+                          key={b.id}
+                          // if the books does not have a shelf, it is set to default 'none'
+                          shelf={b.shelf || 'none'}
+                        />
+                      </div>
+            })
+          )}
+          
         </div>
       </div>
     )

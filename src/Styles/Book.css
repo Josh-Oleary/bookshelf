@@ -1,0 +1,18 @@
+.author {
+  color: grey;
+  font-size: 10px;
+  padding: none;
+  margin: none;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 500;
+  width: 50%;
+}
+
+.book-container {
+  display: flex;
+  align-items: space-around;
+}
+

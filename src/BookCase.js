@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import BookShelf from './BookShelf'
-import './Bookcase.css'
+import './Styles/Bookcase.css'
 import { Link } from 'react-router-dom'
-import './Bookcase.css'
+import PropTypes from 'prop-types'
+
 
 class BookCase extends Component {
-  
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    changeShelf: PropTypes.func.isRequired,
+  }
   render() {
     const { books, changeShelf } = this.props
     return (
       <div className='Bookcase'>
+        {/* using react router to set up app links */}
         <Link
           className='search-nav-link'
           to='/search'>
