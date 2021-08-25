@@ -23,14 +23,16 @@ class SearchPage extends Component {
     const { books, changeShelf} = this.props;
     return(
       <div>
+        
         <form className='search-form'>
           <input 
             className='search-bar' 
             type='text' 
-            placeholder='Title or Author...'
+            placeholder='Search for book...'
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <a href='/'>To Bookshelf</a>
         </form>
         <div className='search-results'>
           {booksOnDisplay.map(b => {

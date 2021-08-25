@@ -5,3 +5,18 @@
   width: 50em;
   margin: auto;
 }
+
+.search-nav-link {
+  align-self: flex-end;
+  margin-right: 3em;
+  position: absolute;
+  margin-top: 2em;
+  text-decoration: none;
+  color: grey;
+  transition: 200ms;
+}
+
+.search-nav-link:hover {
+  color: black;
+}
+

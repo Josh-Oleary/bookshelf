@@ -1,5 +1,5 @@
 .search-bar {
-  width: 100%;
+  width: 90%;
   font-size: 2em;
   height: 1.5em;
   border: 0;
@@ -11,8 +11,9 @@
 }
 
 .search-form {
-  width: 80%;
+  width: 90%;
   margin: auto;
+  display: flex;
 }
 
 .search-results {
@@ -25,4 +26,16 @@
 }
 .result-img {
   flex-basis: 20%;
+}
+
+.search-form a {
+  align-self: flex-end;
+  margin-left: 1em;
+  text-decoration: none;
+  color: grey;
+  transition: 200ms;
+}
+
+.search-form a:hover {
+  color: black;
 }

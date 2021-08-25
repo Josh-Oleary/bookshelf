@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import './App.css';
 import BookCase from './BookCase'
 import SearchPage from './SearchPage'
@@ -32,8 +33,19 @@ class App extends Component {
 
     return (
       <div>
-        <BookCase books={this.state.books} changeShelf={this.changeShelf} />
-        <SearchPage changeShelf={this.changeShelf} books={books} />
+        <Route exact path='/' render={() => (
+          <BookCase books={this.state.books} changeShelf={this.changeShelf} />
+        )}
+        />
+        <Route path='/search' render={({ history }) => (
+          <SearchPage 
+            changeShelf={this.changeShelf} 
+            books={books}
+            
+          />
+          )}
+        />  
+        
       </div>
       
     );
