@@ -14,20 +14,25 @@ class SearchPage extends Component {
   state={
     booksOnDisplay: [],
     query: '',
+    searchErr: false,
   }
   //function for updating query as user types, may add debounce for better ux
-  updateQuery = query => {  
-    BooksAPI.search(query)
-      .then(res => 
-        this.setState(curState => ({
-          booksOnDisplay: curState.booksOnDisplay.concat(res),
-          query: query.trim()
-          })
-        ))
+  updateQuery = event => { 
+    const query = event.target.value;
+    this.setState({ query });
+
+    if (query) {
+    BooksAPI.search(query.trim(), 20)
+      .then(books => {
+        books.length > 0
+        ? this.setState({booksOnDisplay: books, searchErr: false})
+        : this.setState({booksOnDisplay: [], searchErr: true});
+      } 
+      )} else this.setState({booksOnDisplay: [], searchErr: false});
   }
   
   render(){
-    const { query, booksOnDisplay } = this.state;
+    const { query, booksOnDisplay, searchErr } = this.state;
     const { books, changeShelf} = this.props;
     return(
       <div className='search-page'>
@@ -38,7 +43,7 @@ class SearchPage extends Component {
             type='text' 
             placeholder='Search for book...'
             value={query}
-            onChange={(event) => this.updateQuery(event.target.value)}
+            onChange={(event) => this.updateQuery(event)}
           />
           <Link 
           to='/'
@@ -62,7 +67,9 @@ class SearchPage extends Component {
                       </div>
             })
           )}
-          
+          {searchErr && (
+            <h3>No books match this search, please try again!</h3>
+          )}
         </div>
       </div>
     )
