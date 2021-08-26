@@ -10,10 +10,10 @@
 .title {
   font-size: 14px;
   font-weight: 500;
-  width: 70%;
+  width: 80%;
   text-align: center;
   margin: auto;
-  margin-top: .5em;
+  margin-top: .8em;
 }
 
 .book-details-container {
@@ -28,5 +28,9 @@
   width: 10em;
   height: 15em;
   background-size: cover;
-  
+  box-shadow: 0px 0px 10px;
+}
+
+.book-details {
+  width: 15em;
 }
