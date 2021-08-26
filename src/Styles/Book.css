@@ -12,8 +12,8 @@
   font-weight: 500;
   width: 70%;
   text-align: center;
-  align-self: center;
   margin: auto;
+  margin-top: .5em;
 }
 
 .book-details-container {
@@ -26,10 +26,7 @@
 
 .book-cover {
   width: 10em;
-  height: 90%;
-}
-
-.book-cover img {
-  width: 100%;
-  object-fit: cover;
+  height: 15em;
+  background-size: cover;
+  
 }

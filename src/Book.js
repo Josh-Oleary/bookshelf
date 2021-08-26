@@ -13,12 +13,14 @@ class Book extends Component {
 
   render(){
     const { info, changeShelf, books } = this.props
-    const { image } = info.imageLinks;
     return (
       <div className='book-details-container'>
           {/* collecting data from props.info to populate the book info */}
-          <div className='book-cover'>
-            <img src={info.imageLinks.smallThumbnail} alt='book'></img>
+          <div 
+            className='book-cover'
+            style={{ backgroundImage: `url(${info.imageLinks.smallThumbnail})`}}
+          >
+            
           </div>
           <div className='book-details'>
             <p className='title'>{info.title}</p>
