@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as BooksAPI from './BooksAPI'
 import ShelfSwitcher from './ShelfSwitcher'
 import './Styles/Book.css'
 import PropTypes from 'prop-types'
@@ -12,7 +11,7 @@ class Book extends Component {
   }
 
   render(){
-    const { info, changeShelf, books } = this.props
+    const { info, changeShelf, books } = this.props;
     return (
       <div className='book-details-container'>
           {/* collecting data from props.info to populate the book info */}
@@ -33,8 +32,8 @@ class Book extends Component {
           <div className='book-details'>
             <p className='title'>{info.title}</p>
             {info.authors && (
-              info.authors.map(a => {
-                return <p className='author'>{a}</p>
+              info.authors.map((a, i) => {
+                return <p key={i} className='author'>{a}</p>
               })
             )}
             
