@@ -29,8 +29,10 @@
   height: 15em;
   background-size: cover;
   box-shadow: 0px 0px 10px;
+  margin-top: 1em;
 }
 
 .book-details {
   width: 15em;
+  
 }

@@ -16,17 +16,28 @@ class Book extends Component {
     return (
       <div className='book-details-container'>
           {/* collecting data from props.info to populate the book info */}
-          <div 
-            className='book-cover'
-            style={{ backgroundImage: `url(${info.imageLinks.smallThumbnail})`}}
-          >
+          {info.imageLinks ? (
+            <div 
+              className='book-cover'
+              style={{ backgroundImage: `url(${info.imageLinks.smallThumbnail})` }}
+          ></div>
+          ) : (
+            <div
+              className='book-cover'
+              style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1TflCyfWDMNu6q7hVfgolfdYix7qE377UQ&usqp=CAU)`}}>
+            </div>
+          )}
+          
             
-          </div>
+          
           <div className='book-details'>
             <p className='title'>{info.title}</p>
-            {info.authors.map(a => {
-              return <p className='author'>{a}</p>
-            })}
+            {info.authors && (
+              info.authors.map(a => {
+                return <p className='author'>{a}</p>
+              })
+            )}
+            
           </div>
           
       <ShelfSwitcher changeShelf={changeShelf} info={info} books={books} />

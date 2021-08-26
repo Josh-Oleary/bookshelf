@@ -27,7 +27,6 @@
 }
 .search-page {
   background-color: rgba(210, 180, 140, 0.575);
-  height: 100vh;
 }
 .result-img {
   flex-basis: 20%;
